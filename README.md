@@ -8,7 +8,11 @@ Para la visualización y utilización del sistema, hace click en el siguiente li
 Autoras ✒️
 
 Gabriela Pedicino - GabiPedicino;
+
 Mariela Robertiello- Maru10H;
+
 Marite Bravo - maritebr;
+
 Micaela Ferrarese - micaelaFerrarese;
+
 Veronica - 
