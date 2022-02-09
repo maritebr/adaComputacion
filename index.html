@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>ADA PC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+         <!--iconos font-awesome-->
+         <script src="https://kit.fontawesome.com/2a49b64cdb.js" crossorigin="anonymous"></script>
+
+
+         <!--Bulma-->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+ 
+ 
+         <!--Fuente-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+ 
+         <!--Fuente-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+ 
+         <!--Fuente-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+ 
+    </head>
+    <body>
+        
+
+        <!---------------------------------CAJA VENTAS POR SUCURSAL------------------------------->
+        <div class="container is-fullheight is-vcenter">
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical mt-6 ml-6">
+                    <div class="tile">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <div class="column">
+                                    <h2 class="subtitle is-4 is-spaced">Ventas por sucursal</h2>
+                                </div>
+                                <div class="content">
+                                    <div class="card__body">
+                                        <table class="mt-5" id="tabla-sucursal">
+                                            <tr>
+                                                <th>Sucursal</th>
+                                                <th>Total Ventas</th>
+                                            </tr>
+                                            <tbody id="tablaSucursal">  
+                                                <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                    <!------------------------CAJA REPORTES----------->
+                <div class="tile is-parent mt-6 mr-6">
+                    <article class="tile is-child box">
+                        <div class="column">
+                            <h2 class="subtitle is-4 is-spaced">Reportes</h2>  
+                        </div>
+                        <div class="content">
+                            <p class="reportes-productos mt-6 ml-2"><span id="productos-estrella" ></span></p>
+                            <p class="reportes-vendedora mt-5 ml-2"><span id="mayorVentaXVendedora"></span></p>
+                        </div>
+                    </article>
+                </div>
+                
+            </div>
+                    <!------------------CAJA VENTAS--------------------->
+            <div class="tile is-parent mr-6 ml-5 pl-5 pr-1">
+                <div class="tile is-child box">
+                    <div class="columns">
+                        <div class="column">
+                          <h2 class="subtitle is-4 is-spaced mt-2 ml-3">Ventas</h2>
+                        </div>
+                        <div class="column has-text-right">
+                            <button id="btn-nueva-vta" class="button js-modal-trigger is-pulled-right is-info is-outlined is-light mr-2 mt-2" data-target="modal-create">+ Nueva venta</button>
+                        </div>
+                    </div> 
+                    <table class="table is-fullwidth" id="tabla-ventas" >
+                        <th>
+                            <tr>
+                              <th>Fecha de venta</th>
+                              <th>Vendedora</th>
+                              <th>Sucursal</th>
+                              <th>Componentes</th>
+                              <th>Precio</th>
+                              <th>Acciones</th>  
+                            </tr>
+                           
+                        </th>
+                        
+                        <tbody id="tablaVentas">  
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+               
+      
+        </div>
+
+        
+        <!----------------------------------------CREAR MODAL---------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------->
+      <div id="modal-create" class="modal">
+            <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <div class="field">
+                            <label class="label">Vendedora</label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select name="seleccion-vendedora" id="nombre-vendedora">
+                                        <option value="Ada">Ada</option>
+                                        <option value="Grace">Grace</option>
+                                        <option value="Hedy">Hedy</option>
+                                        <option value="Sheryl">Sheryl</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field mb-3">
+                            <label class="label">Componentes</label>
+                            <div class="control is-expanded">
+                                <div class="select is-fullwidth is-multiple">
+                                    <select class="is-block is-multiple" name="componentes" multiple id="seleccion-componentes" size="4">
+                                        <option value="Monitor GPRS 3000">Monitor GPRS 3000</option>
+                                        <option value="Motherboard ASUS 1500">Motherboard ASUS 1500</option>
+                                        <option value="Monitor ASC 543">Monitor ASC 543</option>
+                                        <option value="Motherboard ASUS 1200">Motherboard ASUS 1200</option>
+                                        <option value="Motherboard MZI">Motherboard MZI</option>
+                                        <option value="HDD Toyiva">HDD Toyiva</option>
+                                        <option value="HDD Wezter Dishital">HDD Wezter Dishital</option>
+                                        <option value="RAM Quinston">RAM Quinston</option>
+                                        <option value="RAM Quinston">RAM Quinston Fury</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Sucursal</label>
+                            <div class="control is-expanded">
+                                <div class="select is-fullwidth">
+                                    <div class="select is-fullwidth">
+                                        <select name="componentes" id="seleccion-sucursal">
+                                        <option value="Caballito">Caballito</option>
+                                        <option value="Centro">Centro</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Fecha de venta</label>
+                            <div class="control">
+                                <input class="input" type="date" placeholder="ingrese la fecha de venta" id="seleccion-fecha"/>
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <a class="button is-primary" id="crear-venta"> Guardar </a>
+                            </p>
+                            <p class="control">
+                                <a class="button is-light" id="cancelar-nueva-venta"> Cancelar </a>
+                            </p>
+                        </div>
+                    </div>
+      
+              <button id="btn-close" class="modal-close is-large" aria-label="close"></button>
+            </div>
+        </div>
+
+   
+
+     <!---------------------------------------EDITAR MODAL------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------>
+        <div id="editar-modal" class="modal">
+            <div class="modal-background"></div> 
+                <div class="modal-content">
+                    <div class="box">
+                        <div class="field">
+                            <label class="label">Nombre Vendedora</label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select name="componentes" id="editarNombre">
+                                    <option value="Ada">Ada</option>
+                                    <option value="Grace">Grace</option>
+                                    <option value="Hedy">Hedy</option>
+                                    <option value="Sheryl">Sheryl</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field mb-3">
+                            <label class="label">Componentes</label>
+                            <div class="control is-expanded">
+                            <div class="select is-fullwidth is-multiple">
+                                    <select class="is-block is-multiple" name="componentes" multiple id="editar-componentes" size="4">
+                                    <option value="Monitor GPRS 3000">Monitor GPRS 3000</option>
+                                    <option value="Motherboard ASUS 1500">Motherboard ASUS 1500</option>
+                                    <option value="Monitor ASC 543">Monitor ASC 543</option>
+                                    <option value="Motherboard ASUS 1200">Motherboard ASUS 1200</option>
+                                    <option value="Motherboard MZI">Motherboard MZI</option>
+                                    <option value="HDD Toyiva">HDD Toyiva</option>
+                                    <option value="HDD Wezter Dishital">HDD Wezter Dishital</option>
+                                    <option value="RAM Quinston">RAM Quinston</option>
+                                    <option value="RAM Quinston Fury">RAM Quinston Fury</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field mb-6">
+                            <label class="label">Sucursal</label>
+                            <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                                    <div class="select is-fullwidth">
+                                        <select name="sucursales" id="editarSucursal">
+                                        <option value="Caballito">Caballito</option>
+                                        <option value="Centro">Centro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="editarId">
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Fecha de venta</label>
+                            <div class="control">
+                            <input class="input" type="date" placeholder="ingrese la fecha de venta" id="editar-fecha"/>
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <p class="control">
+                            <a class="button is-primary" id="editar-venta"> Guardar </a>
+                            </p>
+                            <p class="control">
+                            <a id="cerrar-modal-editar" class="button is-light"> Cancelar </a>
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <button id="btn-close-editar" class="modal-close is-large" aria-label="close"></button>
+            </div>
+
+        </div>
+   
+        <!---------------------------------ELIMINAR MODAL----------------------------------------------->
+   
+        <div class="modal" id="modal-eliminar">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="box">
+                    <h2>¿Desea borrar los datos de venta?</h2>
+                    <input type="hidden" class="hidden" id="borrarId"/>
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a class="button" id="eliminar-venta"> Eliminar </a>
+                          </p>
+                          <p class="control">
+                            <a class="button" id="cancelar-eliminar">Cancelar</a>
+                          </p>
+                    </div>
+                </div>
+            </div>  
+            <button class="modal-close is-large" aria-label="close"></button>
+          
+        </div>
+    
+    
+
+    
+    <script src="script.js"></script>
+    </body>
+</html>

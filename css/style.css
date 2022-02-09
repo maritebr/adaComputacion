@@ -1,0 +1,60 @@
+
+
+/*-------VARIABLES--------*/
+:root {
+    --color-1: #11468F;
+    --color-2: #FF7171;
+    --color-3: #0ca132;
+    --color-4: #316B83;
+    --color-5: #8CA1A5;
+}
+
+body{
+    min-height: 100vh; 
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.container{
+    margin: 100px auto;
+    max-width: 90%;
+}
+
+.column{
+    width: 100%;
+    font-family: 'Indie Flower', cursive;
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    box-shadow:10px 10px 5px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);;
+    padding: 10px 20px;   
+}
+
+th{
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+
+td{
+    font-family: 'Quicksand', sans-serif;
+   
+}
+
+
+p{
+    font-family: 'Quicksand', sans-serif;
+}
+
+#btn-nueva-vta:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.pencil{
+    margin-left: 10px;
+    color: var(--color-3);
+}
+
+.trash{
+    color: var(--color-2);
+    margin-left: 20px;
+}
