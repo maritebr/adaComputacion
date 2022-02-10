@@ -15,4 +15,4 @@ Marite Bravo - maritebr;
 
 Micaela Ferrarese - micaelaFerrarese;
 
-Veronica - 
+Veronica Cardozo - veronicacd;
